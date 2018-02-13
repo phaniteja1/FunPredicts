@@ -1,0 +1,14 @@
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
+
+@import 'components/prediction-card';
+@import 'components/prediction-stock-table';
+@import 'components/prediction-stock-row';
+@import 'components/buy-stock-modal';
+@import 'components/sell-stock-modal';
+
+.ember-modal-dialog {
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: 0 0 0 0 darkgray;
+}

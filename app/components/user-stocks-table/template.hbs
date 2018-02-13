@@ -1,0 +1,17 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Question</th>
+      <th scope="col">Your Prediction</th>
+      <th scope="col">Cost/Share</th>
+      <th scope="col">Number of Shares</th>
+      <th scope="col">Total Cost</th>
+      <th scope="col">Sell</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each userStocks as |userStock|}}
+      {{user-stocks-table-row userStock=userStock}}
+    {{/each}}
+  </tbody>
+</table>

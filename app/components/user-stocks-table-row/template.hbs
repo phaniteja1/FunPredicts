@@ -1,0 +1,6 @@
+<td>{{userStock.stock.prediction.title}}</td>
+<td>{{userStock.stock.title}}</td>
+<td>{{userStock.stock.price}} &cent;</td>
+<td>{{userStock.number_of_stocks}}</td>
+<td>{{multiply userStock.number_of_stocks userStock.stock.price}} &cent;</td>
+<td><button type="button" class="btn btn-primary btn-sm" onClick={{route-action "showSellStockModal" userStock}}>Sell</button></td>

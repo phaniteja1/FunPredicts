@@ -1,0 +1,10 @@
+<br>
+<h3 class="text-center">Predictions</h3>
+
+{{predictions-wrapper data=model}}
+
+{{#if showBuyStockModal}}
+  {{buy-stock-modal stock=stock
+    buyStock=(route-action "buyStock")
+    hideBuyStockModal=(route-action "hideBuyStockModal")}}
+{{/if}}

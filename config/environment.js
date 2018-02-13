@@ -20,6 +20,17 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
+      'font-src': "'self'",
+      'connect-src': "'self' http://localhost:8000",
+      'img-src': "'self'",
+      'report-uri':"'localhost'",
+      'style-src': "'self' 'unsafe-inline'",
+      'frame-src': "'none'"
     }
   };
 
@@ -29,6 +40,10 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.api = {
+      host: 'localhost:8000',
+      namespace: ''
+    };
   }
 
   if (environment === 'test') {
@@ -41,10 +56,19 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
+
+    ENV.api = {
+      host: 'http://sample.com',
+      namespace: 'api/v1'
+    };
   }
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.api = {
+      host: 'http://sample.com',
+      namespace: 'api/v1'
+    };
   }
 
   return ENV;

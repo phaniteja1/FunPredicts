@@ -1,0 +1,19 @@
+<div class="row prediction-stock-row">
+  <div class="col-3">
+    {{stock.title}}
+  </div>
+  <div class="col-3">
+    {{stock.price}}
+  </div>
+  <div class="col-3">
+    {{stock.price_change_value}}
+    {{#if (eq stock.price_change "P")}}
+      {{fa-icon "arrow-up" class="text-success"}}
+    {{else}}
+      {{fa-icon "arrow-down" class="text-danger"}}
+    {{/if}}    
+  </div>
+  <div class="col-3">
+    <button type="button" class="btn btn-success btn-sm" onClick={{route-action "showBuyStock" stock}}>Buy</button>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="col-12">
+  <div class="card prediction-card">
+    <img class="img-fluid prediction-image" src={{prediction.image_url}} alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title prediction-title">{{prediction.title}}</h4>
+      {{prediction-stock-table stocks=prediction.stocks}}
+    </div>
+  </div>
+</div>
