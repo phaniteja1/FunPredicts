@@ -11,23 +11,12 @@ export default Route.extend({
 
   actions: {
     sellStock(userStock) {
-      let transactionCostToAdd = userStock.get('number_of_stocks') * userStock.get('stock.price');
-
       this.store.findRecord('user-stock', userStock.get('id'), { backgroundReload: false }).then((stock) => {
         stock.deleteRecord();
-        stock.get('isDeleted'); // => true
         stock.save().then(() => {
-          let currentUser = this.get('currentUser.user');
-
-          let currentUserMoney = currentUser.get('money');
-
-          currentUser.set('money', currentUserMoney + transactionCostToAdd);
-          currentUser.save().then(() => {
-            this.send('hideSellStockModal');
-          });
-        }).catch(() => {
-          
-        }); 
+          this.store.findRecord('user', this.get('currentUser.user.id'));
+          this.send('hideSellStockModal');
+        });
       });
     },
 
