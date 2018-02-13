@@ -18,16 +18,8 @@ export default Route.extend({
       });
 
       userStockCollection.save().then(() => {
-        let transactionCost = numberOfStocks * stock.get('price');
-
-        let currentUser = this.get('currentUser.user');
-
-        let currentUserMoney = currentUser.get('money');
-
-        currentUser.set('money', currentUserMoney - transactionCost);
-        currentUser.save().then(() => {
-          this.send('hideBuyStockModal');
-        });
+        this.store.findRecord('user', this.get('currentUser.user.id'));
+        this.send('hideBuyStockModal');
       }).catch(() => {
         userStockCollection.deleteRecord();
       });
