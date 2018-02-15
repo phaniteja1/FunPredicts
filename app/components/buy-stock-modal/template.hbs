@@ -2,32 +2,32 @@
     onClose=(action hideBuyStockModal)
     translucentOverlay=true
     containerClass="buy-stock-modal"}}
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">{{stock.prediction.title}}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">{{stock.prediction.title}}</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-6">{{stock.title}}</div>
+        <div class="col-6">{{stock.price}} &cent;</div>
       </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-6">{{stock.title}}</div>
-          <div class="col-6">{{stock.price}} &cent;</div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-6">Stocks</div>
-          <div class="col-6">{{input value=(mut numberOfStocks)}}</div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-6">Total Amount</div>
-          <div class="col-6">{{totalAmount}} &cent;</div>
-        </div>
+      <hr>
+      <div class="row">
+        <div class="col-6">Stocks</div>
+        <div class="col-6">{{input value=(mut numberOfStocks)}}</div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onClick={{action buyStock stock numberOfStocks}}>Confirm Buy</button>
-        <button type="button" class="btn btn-secondary" onClick={{action hideBuyStockModal}}>Close</button>
+      <hr>
+      <div class="row">
+        <div class="col-6">Total Amount</div>
+        <div class="col-6">{{totalAmount}} &cent;</div>
       </div>
     </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" onClick={{action buyStock stock numberOfStocks}}>Confirm Buy</button>
+      <button type="button" class="btn btn-secondary" onClick={{action hideBuyStockModal}}>Close</button>
+    </div>
+  </div>
 {{/modal-dialog}}

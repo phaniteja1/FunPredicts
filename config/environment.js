@@ -22,14 +22,18 @@ module.exports = function(environment) {
       // when it is created
     },
 
+    googleFonts: [
+      'Lato'
+    ],
+
     contentSecurityPolicy: {
       'default-src': "'none'",
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
       'font-src': "'self'",
       'connect-src': "'self' http://localhost:8000",
-      'img-src': "'self'",
+      'img-src': "'self' fonts.gstatic.com",
       'report-uri':"'localhost'",
-      'style-src': "'self' 'unsafe-inline'",
+      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
       'frame-src': "'none'"
     }
   };

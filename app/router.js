@@ -7,9 +7,11 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('index');
   this.route('predictions');
   this.route('stocks');
   this.route('profile');
+  this.route('home');
 });
 
 export default Router;

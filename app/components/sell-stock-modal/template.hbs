@@ -2,37 +2,37 @@
     onClose=(route-action "hideSellStockModal")
     translucentOverlay=true
     containerClass="sell-stock-modal"}}
-     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">{{userStock.stock.prediction.title}}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">{{userStock.stock.prediction.title}}</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-6">Your Stock : </div>
+        <div class="col-6">{{userStock.stock.title}}</div>
       </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-6">Your Stock : </div>
-          <div class="col-6">{{userStock.stock.title}}</div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-6">Stock Price / Share : </div>
-          <div class="col-6">{{userStock.stock.price}} &cent;</div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-6">Number of Stocks</div>
-          <div class="col-6">{{userStock.number_of_stocks}}</div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-6">Total Amount</div>
-          <div class="col-6">{{multiply userStock.number_of_stocks userStock.stock.price}} &cent;</div>
-        </div>
+      <hr>
+      <div class="row">
+        <div class="col-6">Stock Price / Share : </div>
+        <div class="col-6">{{userStock.stock.price}} &cent;</div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onClick={{route-action "sellStock" userStock}}>Confirm Sell</button>
-        <button type="button" class="btn btn-secondary" onClick={{route-action "hideSellStockModal"}}>Close</button>
+      <hr>
+      <div class="row">
+        <div class="col-6">Number of Stocks</div>
+        <div class="col-6">{{userStock.number_of_stocks}}</div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-6">Total Amount</div>
+        <div class="col-6">{{multiply userStock.number_of_stocks userStock.stock.price}} &cent;</div>
       </div>
     </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" onClick={{route-action "sellStock" userStock}}>Confirm Sell</button>
+      <button type="button" class="btn btn-secondary" onClick={{route-action "hideSellStockModal"}}>Close</button>
+    </div>
+  </div>
 {{/modal-dialog}}
